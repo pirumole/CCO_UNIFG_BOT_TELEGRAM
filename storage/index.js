@@ -8,7 +8,12 @@ class Storage extends Util {
         this.os = require('os');
         this.process = require('process');
         this.crypto = require('crypto');
+        this.Stream = require('stream');
+        this.Bot = new this.BotModule(this.process.env.TELEGRAM_TOKEN, { polling: true });
         this.on('save-password', this.savePassSave);
+        this.timeToClearCache = 30;
+        this.backupMode = false;
+        this.botMessageTimeClear = 30;
     }
 
     async dirExists(dir) {

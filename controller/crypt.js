@@ -16,6 +16,7 @@ class Crypt extends Storage {
         this.iv        = Buffer.alloc(this.ivLen, 0);
         this.key       = this.getCryptoKey();
         this.cipher    = this.getCryptoCipher();
+        this.decipher  = this.getCryptoDecipher();
 
         this.emit('save-password', { date: this.date, password: this.password, fileName: this.getCryptoFileName({ date: this.date }) });
     }
@@ -41,7 +42,15 @@ class Crypt extends Storage {
         );
     }
 
-    encrypt(value) {
+    getCryptoDecipher() {
+        return this.crypto.createDecipheriv(
+            this.algorithm,
+            this.key,
+            this.iv
+        );
+    }
+
+    encryptSync(value) {
         return new Promise((resolve) => {
             this.cipher.on('readable', () => {
                 let chunk;
@@ -58,7 +67,21 @@ class Crypt extends Storage {
         });
     }
 
-    async decrypt() {}
+    decryptSync(value) {
+        return new Promise((resolve) => {
+            this.decipher.on('readable', () => {
+                let chunk;
+                let decrypt = '';
+                while(null !== (chunk = this.decipher.read())) {
+                    decrypt += chunk.toString('utf8');
+                }
+                resolve(decrypt);
+            });
+
+            this.decipher.write(value, 'hex');
+            this.decipher.end();
+        });
+    }
 }
 
 module.exports = Crypt;

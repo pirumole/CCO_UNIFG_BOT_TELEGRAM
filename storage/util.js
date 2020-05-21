@@ -20,6 +20,14 @@ class Util extends MyEvent {
         return this.stringReplace({ toRegExp: '@date@', global: true, string: file, valueReplace: `${option.date.toLocaleDateString()}-` });
     }
 
+    sleep(time) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(true);
+            }, (parseFloat(time) || 1) * 1000);
+        });
+    }
+
     getDate() {
         return new Date();
     }

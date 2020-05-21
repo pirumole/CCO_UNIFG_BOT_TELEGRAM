@@ -7,3 +7,6 @@ exports.ValueArrayOption     = require('./value_array');
 exports.CryptoPassSaveOption = require('./crypto_pass_save');
 exports.StringReplaceOption  = require('./string_replace');
 exports.SavePassOption       = require('./save_pass');
+exports.TelegraMessageOption = require('./message');
+exports.RemoveMessageOption  = require('./remove_message');
+exports.MetadataOption       = require('./metadata');

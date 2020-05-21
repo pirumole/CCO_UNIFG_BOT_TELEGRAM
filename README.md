@@ -1,6 +1,6 @@
 # CCO UNIFG BOT TELEGRAM
 
-after start execute comand
+before starting execute command
 
 <pre>
 $ npm install

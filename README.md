@@ -4,4 +4,4 @@ before starting execute command
 
 <pre>
 $ npm install
-<pre>
+</pre>

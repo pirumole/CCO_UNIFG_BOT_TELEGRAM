@@ -1,0 +1,26 @@
+{
+  "name": "cco_unifg_bot_telegram",
+  "version": "0.0.1",
+  "description": "cco bot telegram",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirumole/CCO_UNIFG_BOT_TELEGRAM.git"
+  },
+  "keywords": [
+    "telegram_bot"
+  ],
+  "author": "João Victor Palmeira da Silva Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pirumole/CCO_UNIFG_BOT_TELEGRAM/issues"
+  },
+  "homepage": "https://github.com/pirumole/CCO_UNIFG_BOT_TELEGRAM#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-telegram-bot-api": "^0.50.0"
+  }
+}

@@ -1,0 +1,9 @@
+exports.SaveFileOption       = require('./save_file'); 
+exports.ReadFileOption       = require('./read_file');
+exports.PasswordOption       = require('./pass');
+exports.RandomOption         = require('./random');
+exports.InArrayOption        = require('./in_array');
+exports.ValueArrayOption     = require('./value_array');
+exports.CryptoPassSaveOption = require('./crypto_pass_save');
+exports.StringReplaceOption  = require('./string_replace');
+exports.SavePassOption       = require('./save_pass');
